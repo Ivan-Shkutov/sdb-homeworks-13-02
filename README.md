@@ -15,6 +15,25 @@
 
 ### Решение:
 
+sudo apt update
+
+sudo apt install ecryptfs-utils
+
+sudo adduser cryptouser
+
+sudo ecryptfs-migrate-home -u cryptouser (настройка шифрования домашнего каталога, выполнить инициализацию под создаваемым пользователем cryptouser)
+
+sudo passwd cryptouser
+
+su - cryptouser (зашифрованные данные будут храниться в /home/.cryptouser или /home/.ecryptfs/cryptouser в зашифрованном виде)
+
+ecryptfs-unwrap-passphrase (принимает файл и пароль пользователя, возвращая mount passphrase. Полученный mount passphrase нужен для ручного монтирования зашифрованного каталога или для восстановления доступа, если автоматический монтирование не работает.)
+
+[1!] 
+
+
+
+
 
 ### Задание 2
 
