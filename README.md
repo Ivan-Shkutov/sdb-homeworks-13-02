@@ -29,9 +29,11 @@ su - cryptouser (зашифрованные данные будут хранит
 
 ecryptfs-unwrap-passphrase (принимает файл и пароль пользователя, возвращая mount passphrase. Полученный mount passphrase нужен для ручного монтирования зашифрованного каталога или для восстановления доступа, если автоматический монтирование не работает.)
 
-[1!] 
+![1](https://github.com/Ivan-Shkutov/sdb-homeworks-13-02/blob/main/1.png)
 
+![2](https://github.com/Ivan-Shkutov/sdb-homeworks-13-02/blob/main/2.png)
 
+![3](https://github.com/Ivan-Shkutov/sdb-homeworks-13-02/blob/main/3.png)
 
 
 
