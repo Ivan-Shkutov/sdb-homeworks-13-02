@@ -49,8 +49,39 @@ ecryptfs-unwrap-passphrase (принимает файл и пароль поль
 
 ### Решение:
 
+sudo apt update && sudo apt install -y cryptsetup
+
+lsblk (просмотр дисков)
+
+sudo cryptsetup luksFormat /dev/sdb (инициализация LUKS на разделе)
+
+sudo cryptsetup isLuks /dev/sdb && echo "LUKS OK" || echo "NOT LUKS" (проверка инициализации LUSK, информация о LUKS header)
+
+sudo cryptsetup open /dev/sdb mydisk (открытие LUKS контейнера)
+
+ls -l /dev/mapper/mydisk
+
+sudo mkfs.ext4 /dev/mapper/mydisk (создание файловой системы)
+
+sudo mkdir -p /mnt/mydisk
+
+sudo mount /dev/mapper/mydisk /mnt/mydisk (монтирование файловой системы)
+
+sudo touch /mnt/mydisk/testfile
+
+ls -l /mnt/mydisk (проверка записи)
+
+sudo umount /mnt/mydisk (отмонтирование файловой системы)
+
+sudo cryptsetup close mydisk (закрытие LUKS контейнера)
+
+ls /dev/mapper (убедиться, что mydisk отсутствует)
 
 
+![4](https://github.com/Ivan-Shkutov/sdb-homeworks-13-02/blob/main/4.png)
 
+![5](https://github.com/Ivan-Shkutov/sdb-homeworks-13-02/blob/main/5.png)
 
+![6](https://github.com/Ivan-Shkutov/sdb-homeworks-13-02/blob/main/6.png)
 
+![7](https://github.com/Ivan-Shkutov/sdb-homeworks-13-02/blob/main/7.png)
